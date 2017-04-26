@@ -1,0 +1,181 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ElibraryMaster.master.cs" Inherits="ELibrary.ElibraryMaster" %>
+
+<!DOCTYPE html>
+<link href="ELibraryStyle.css" rel="stylesheet" />
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        #header {
+            text-align: left;
+        }
+        .auto-style2 {
+            margin-left: 5px;
+        }
+        .auto-style5 {
+            text-align: right;
+            width: 484px;
+            height: 100px;
+            margin-bottom: 0px;
+        }
+        .auto-style6 {
+            width: 289px;
+        }
+        .auto-style9 {
+            width: 100%;
+            height: 286px;
+        }
+        .auto-style10 {
+            width: 435px;
+            text-align: center;
+            height: 300px;
+            background-color: #FFdab4;
+        }
+        .auto-style11 {
+            width: 270px;
+            height: 300px;
+            background-color: #FFdab4;
+        }
+        .auto-style12 {
+            font-size: xx-large;
+        }
+        .auto-style13 {
+            height: 300px;
+            background-color: #FFdab4;
+        }
+        .auto-style14 {
+            background-color: #FFecd8;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="form1" runat="server">
+        <div id="outer-container">  
+            <table class="auto-style9">
+                <tr>
+                    <td class="auto-style11">  
+
+        <img alt="" class="auto-style6" src="ebooks-website.jpg" /></td>
+                    <td class="auto-style10">&nbsp;<strong><span class="auto-style12">
+                        <marquee direction="down"
+                        <asp:Label ID="Label1" runat="server" Text="Електронна книжарница" meta:resourcekey="Label1Resource2">
+                        </asp:Label></marquee>
+                        </span></strong> </td>
+                    <td class="auto-style13"><asp:LoginView ID="LoginView1" runat="server">
+            <AnonymousTemplate>
+                <asp:Login ID="Login1" runat="server" Height="130px" LoginButtonText="Вход" OnAuthenticate="Login1_Authenticate" PasswordLabelText="Парола:" RememberMeText="Запомни ме следващия път." style="text-align: right" TitleText="Вход" UserNameLabelText="Потребителско име" Width="294px" meta:resourcekey="Login1Resource1">
+                </asp:Login>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:LinkButton ID="lkbZabravenaParola" runat="server" OnClick="lkbZabravenaParola_Click" style="text-align: left" meta:resourcekey="lkbZabravenaParolaResource1">Забравихте паролата си?</asp:LinkButton>
+                <asp:PasswordRecovery ID="PassRecoweryAnonym" runat="server" SubmitButtonText="Изпращане" UserNameInstructionText="Въведете потребителкото си име, за да получите паролата си." UserNameLabelText="Потребителко име:" UserNameTitleText="Забравихте паролата си?" Visible="False" Height="70px" Width="310px" meta:resourcekey="PassRecoweryAnonymResource1" OnSendingMail="PassRecoweryAnonym_SendingMail">
+                </asp:PasswordRecovery>
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:ImageButton ID="ImgBtnEN" runat="server" Height="42px" ImageUrl="~/EN-USflag.jpg" meta:resourcekey="ImgBtnENResource1" OnClick="ImgBtnEN_Click" Width="70px" />
+                <asp:ImageButton ID="ImgBtnBG" runat="server" CssClass="auto-style2" Height="39px" ImageUrl="~/bg-natflag.gif" meta:resourcekey="ImgBtnBGResource1" OnClick="ImgBtnBG_Click" Width="70px" />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </AnonymousTemplate>
+            <RoleGroups>
+                <asp:RoleGroup Roles="Admin">
+                    <ContentTemplate>
+                        <asp:ChangePassword ID="ChangePassAdmin" runat="server" CancelButtonText="Отказ" ChangePasswordButtonText="Променете паролата" ChangePasswordTitleText="Промяна на парола" ConfirmNewPasswordLabelText="Потвърдете новата парола:" ConfirmPasswordCompareErrorMessage="Потвърдете новата парола трябва да съвпада с Новата парола за вход." NewPasswordLabelText="Нова парола:" PasswordLabelText="Парола:" Visible="False" meta:resourcekey="ChangePassAdminResource1">
+                        </asp:ChangePassword>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" AnswerLabelText="Таен отговор:" ConfirmPasswordCompareErrorMessage="Пролата и Повторете паролата трябва да съвпадат." ConfirmPasswordLabelText="Повторете паролата:" CreateUserButtonText="Създай потребител" PasswordLabelText="Парола:" QuestionLabelText="Таен въпрос:" UserNameLabelText="Потребителско име:" meta:resourcekey="CreateUserWizard1Resource1">
+                            <WizardSteps>
+                                <asp:CreateUserWizardStep runat="server" meta:resourcekey="CreateUserWizardStepResource1" />
+                                <asp:CompleteWizardStep runat="server" meta:resourcekey="CompleteWizardStepResource1" />
+                            </WizardSteps>
+                        </asp:CreateUserWizard>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:LinkButton ID="LkbSyzdavane" runat="server" meta:resourcekey="LkbSyzdavaneResource1">Създаване на потребител</asp:LinkButton>
+                        <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:LinkButton ID="LnkbPromqnaPass" runat="server" OnClick="LnkbPromqnaPass_Click" meta:resourcekey="LnkbPromqnaPassResource1">Промяна на парола</asp:LinkButton>
+                        <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:LoginName ID="LoginName2" runat="server" meta:resourcekey="LoginName2Resource1" />
+                        <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:LoginStatus ID="Izhod" runat="server" LoginText="Изход" meta:resourcekey="IzhodResource1" />
+                    </ContentTemplate>
+                </asp:RoleGroup>
+                <asp:RoleGroup Roles="User">
+                    <ContentTemplate>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:ChangePassword ID="ChangePassUser" runat="server" CancelButtonText="Отказ" ChangePasswordButtonText="Променете парола" ChangePasswordTitleText="Промяна на парола" ConfirmNewPasswordLabelText="Потвърдете новата парола:" ConfirmPasswordCompareErrorMessage="Потвърдете новата парола трябва да съвпада с Новата парола за вход." meta:resourcekey="ChangePassUserResource1" NewPasswordLabelText="Нова парола:" OnChangedPassword="ChangePassUser_ChangedPassword" PasswordLabelText="Парола:" Visible="False">
+                        </asp:ChangePassword>
+                        <br />
+                        <br />
+                        <div class="auto-style5">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:LoginName ID="LoginName1" runat="server" meta:resourcekey="LoginName1Resource1" />
+                            <asp:LoginStatus ID="LoginStatusVhod" runat="server" LoginText="Вход" meta:resourcekey="LoginStatusVhodResource1" />
+                            <br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:LinkButton ID="LkbSmqnNaPass" runat="server" meta:resourcekey="LkbSmqnNaPassResource1" OnClick="LinkButton1_Click">Смяна на парола</asp:LinkButton>
+                            <br />
+                            <br />
+                            <asp:ImageButton ID="ImgBtnEN" runat="server" Height="42px" ImageUrl="~/EN-USflag.jpg" meta:resourcekey="ImgBtnENResource1" OnClick="ImgBtnEN_Click" Width="70px" />
+                            <asp:ImageButton ID="ImgBtnBG" runat="server" CssClass="auto-style2" Height="39px" ImageUrl="~/bg-natflag.gif" meta:resourcekey="ImgBtnBGResource1" OnClick="ImgBtnBG_Click" Width="70px" />
+                            &nbsp;<br />
+                        </div>
+                    </ContentTemplate>
+                </asp:RoleGroup>
+            </RoleGroups>
+        </asp:LoginView>
+
+                    </td>
+                </tr>
+            </table>
+            <h1><asp:SiteMapPath ID="SiteMapPath1" runat="server" meta:resourcekey="SiteMapPath1Resource1" CssClass="auto-style14">
+                </asp:SiteMapPath>
+            </h1>
+            <p>
+               <marquee direction="left">
+            <asp:Label ID="Label2" runat="server" Text="Тази седмица 15% отстъпка на книгите от категория Database"
+            meta:resourcekey="Label1Resource2">
+            </asp:Label></marquee>
+               <marquee direction="left">
+            <asp:Image ImageURL="~/BookPictures/DB333.jpg" runat="server"  />
+                <asp:Image ImageUrl="~/BookPictures/DB222.jpg" runat="server" />
+                    <asp:Image ImageUrl="~/BookPictures/DB444.jpg" runat="server" />
+            
+                 </marquee>
+            <p>
+               &nbsp;</p>
+            <p>
+                &nbsp;</p>
+        
+            <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" DataSourceID="SiteMapDataSource1" meta:resourcekey="Menu1Resource1">
+            </asp:Menu>
+            <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="False" />
+    </div>
+
+    <div id="left-sidebar">  
+    </div>
+<div id="content-container1">  
+          
+     
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+        
+        </asp:ContentPlaceHolder>
+       
+    </div>
+    <div id="content-container">  
+          
+     
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        
+    </div>
+
+        <div id="footer">   
+    </div> 
+
+    </form>
+</body>
+</html>

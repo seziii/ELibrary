@@ -1,0 +1,6 @@
+D:\УНСС\Chetvyrti kurs\Е-бизнес\ELibrary\ELibrary\bin\ELibrary.dll.config
+D:\УНСС\Chetvyrti kurs\Е-бизнес\ELibrary\ELibrary\bin\ELibrary.dll
+D:\УНСС\Chetvyrti kurs\Е-бизнес\ELibrary\ELibrary\bin\ELibrary.pdb
+D:\УНСС\Chetvyrti kurs\Е-бизнес\ELibrary\ELibrary\obj\Debug\ELibrary.dll
+D:\УНСС\Chetvyrti kurs\Е-бизнес\ELibrary\ELibrary\obj\Debug\ELibrary.pdb
+D:\УНСС\Chetvyrti kurs\Е-бизнес\ELibrary\ELibrary\obj\Debug\ELibrary.csprojResolveAssemblyReference.cache

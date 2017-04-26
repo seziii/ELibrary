@@ -1,0 +1,30 @@
+﻿body {
+    margin: 0px;  
+    padding: 0px;
+    background-color:aliceblue;
+}
+
+#header {  
+    width: 880px;  
+    height: 70px;  
+    background-color:aliceblue;
+}  
+
+#top-Nav {  
+    width: 990px;  
+    background-color: black;  
+    margin: 2px 0px 0px 0px;  
+}  
+
+#content-container {  
+    width: 626px;  
+    height: 400px;  
+    background-color:beige;  
+    margin: 2px 0px 2px 0px;  
+    float: left;  
+}  
+
+#footer {  
+    width: 990px;  
+    background-color: bisque;  
+}  
